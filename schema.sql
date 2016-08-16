@@ -6,13 +6,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
 # Dump of table article_images
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `article_images`;
-
-CREATE TABLE `article_images` (
+CREATE TABLE IF NOT EXISTS `article_images` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `article_id` bigint(20) unsigned DEFAULT NULL,
   `image_url` varchar(240) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -28,9 +25,7 @@ CREATE TABLE `article_images` (
 # Dump of table article_tags
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `article_tags`;
-
-CREATE TABLE `article_tags` (
+CREATE TABLE IF NOT EXISTS `article_tags` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `article_id` bigint(20) unsigned NOT NULL,
   `tag` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -45,9 +40,7 @@ CREATE TABLE `article_tags` (
 # Dump of table articles
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `articles`;
-
-CREATE TABLE `articles` (
+CREATE TABLE IF NOT EXISTS `articles` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `content` longtext NOT NULL,
@@ -69,9 +62,7 @@ CREATE TABLE `articles` (
 # Dump of table favorites
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `favorites`;
-
-CREATE TABLE `favorites` (
+CREATE TABLE IF NOT EXISTS `favorites` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `article_id` bigint(20) unsigned NOT NULL,
   `user_id` bigint(20) unsigned NOT NULL,
@@ -84,9 +75,7 @@ CREATE TABLE `favorites` (
 # Dump of table feedbacks
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `feedbacks`;
-
-CREATE TABLE `feedbacks` (
+CREATE TABLE IF NOT EXISTS `feedbacks` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `article_id` bigint(20) unsigned NOT NULL,
   `user_id` bigint(20) unsigned NOT NULL,
@@ -101,9 +90,7 @@ CREATE TABLE `feedbacks` (
 # Dump of table reviews
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `reviews`;
-
-CREATE TABLE `reviews` (
+CREATE TABLE IF NOT EXISTS `reviews` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `article_id` bigint(20) unsigned NOT NULL,
   `user_id` bigint(20) unsigned NOT NULL,
@@ -119,9 +106,7 @@ CREATE TABLE `reviews` (
 # Dump of table user_groups
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `user_groups`;
-
-CREATE TABLE `user_groups` (
+CREATE TABLE IF NOT EXISTS `user_groups` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `description` text COLLATE utf8mb4_unicode_ci,
@@ -133,9 +118,7 @@ CREATE TABLE `user_groups` (
 # Dump of table users
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_group_id` bigint(20) unsigned NOT NULL,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
