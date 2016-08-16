@@ -1,7 +1,7 @@
 #!/bin/bash
 
 output=$(docker-machine status)
-if [ $output -eq "Running" ]; then
+if [ $output -ne "Running" ]; then
   eval $(docker-machine env)
   docker-machine start
 fi
