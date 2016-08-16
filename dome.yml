@@ -1,0 +1,15 @@
+database:
+  image: mariadb
+  container_name: dome
+  ports:
+     - 3306:3306
+  expose:
+     - 3306
+  volumes:
+     - /var/lib/mysql
+     - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+  environment:
+    MYSQL_USER: "dome"
+    MYSQL_PASSWORD: "domepwd"
+    MYSQL_DATABASE: "dome"
+    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
