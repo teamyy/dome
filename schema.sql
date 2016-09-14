@@ -192,6 +192,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_group_id` bigint(20) unsigned DEFAULT NULL,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `nickname` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `birthday` date NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '1',
